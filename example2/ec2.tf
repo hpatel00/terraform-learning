@@ -1,3 +1,0 @@
-
-
-#NOTE on Egress rules:
