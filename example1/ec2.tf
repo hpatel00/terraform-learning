@@ -36,4 +36,5 @@ resource "aws_security_group" "allow_tls" {
     Name = "allow_tls"
   }
 }
-NOTE on Egress rules:
+
+#NOTE on Egress rules:
