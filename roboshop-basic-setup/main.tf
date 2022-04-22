@@ -2,5 +2,5 @@ module "component" {
   for_each = ALL_COMPONENTS
   source = "./ec2"
   COMPONENT = each.key
-  APP_VERSION = each.value
+  APP_VERSION = each.value.app_version
 }
