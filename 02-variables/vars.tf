@@ -2,7 +2,7 @@ variable "example" {
   default = "Hello World"
 }
 
-ouput "example" {
+output "example" {
   value = var.example
 }
 
