@@ -20,7 +20,7 @@ resource "null_resource" "null" {
     connection {
       type     = "ssh"
       user     = "centos"
-      password = DevOps321
+      password = "DevOps321"
       host     = aws_instance.sample.public_ip
     }
     inline = [
