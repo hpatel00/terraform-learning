@@ -15,16 +15,18 @@ resource "aws_instance" "sample" {
 
 
 
-provisioner "remote-exec" {
-  connection {
-    type     = "ssh"
-    user     = "centos"
-    password = DevOps321
-    host     = aws_instance.sample.public_ip
+resource "null_resource" "null" {
+  provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "centos"
+      password = DevOps321
+      host     = aws_instance.sample.public_ip
+    }
+    inline = [
+      "ansible-pull -U https://github.com/hpatel00/ansible roboshop.yml -e HOST=localhost -e role_name=frontend -e ENV=dev -e APP_VERSION=1.0.0"
+    ]
   }
-  inline = [
-    "ansible-pull -U https://github.com/hpatel00/ansible roboshop.yml -e HOST=localhost -e role_name=frontend -e ENV=dev -e APP_VERSION=1.0.0"
-  ]
 }
 
 variable "sg" {}
