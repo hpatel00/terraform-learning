@@ -57,21 +57,25 @@ output "sample2" {
   value = var.Sample2 ##considers it a number
 }
 
+#when passing variables to this file, use -var_file=<file>.tfvars in the commandline
 variable "URL" {}
 output "URL" {
   value = var.URL
 }
 
+#supply environment variable in the command line using -var <var_Name>=input
 variable "URL_CLI" {}
 output "URL_CLI" {
   value = var.URL_CLI
 }
 
+# use export TF_VAR_<var_Name>=input to pass this variable through shell
 variable "URL_SHELL" {}
 output "URL_SHELL" {
   value = var.URL_SHELL
 }
 
+#variable supplied in sample.auto.tfvars file
 variable "URL1" {}
 output "URL1" {
   value = var.URL1
